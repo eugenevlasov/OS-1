@@ -34,6 +34,7 @@ int main()
         snprintf (buffer_child, 30, "%d", getppid());
         FILE * child_file = fopen(child_filename,"wb");
         fwrite(buffer_child, strlen(buffer_child), 1, child_file);
+        fclose(child_file);
     }
         return 0;
 }
