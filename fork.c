@@ -3,11 +3,11 @@
 #include <sys/types.h>
 #include <string.h>
 
-int main()
+int main(int argc, char* argv[])
 {
     int pid = fork ();
-    char parent_filename[41] = "../process_";
-    char child_filename[41] = "../process_";
+    char parent_filename[41] = "process_";
+    char child_filename[41] = "process_";
     char buffer_parent [30];
     char buffer_child [30];
     if (pid == -1)
