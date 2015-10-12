@@ -1,0 +1,19 @@
+fork.c:8:15: warning: implicit declaration of function 'fork' is invalid in C99 [-Wimplicit-function-declaration]
+    int pid = fork ();
+              ^
+fork.c:17:14: error: too few arguments to function call, expected 1, have 0
+        wait();
+        ~~~~ ^
+/usr/include/sys/wait.h:248:1: note: 'wait' declared here
+pid_t   wait(int *) __DARWIN_ALIAS_C(wait);
+^
+fork.c:18:31: warning: implicit declaration of function 'getpid' is invalid in C99 [-Wimplicit-function-declaration]
+        printf("parent %d\n", getpid());
+                              ^
+fork.c:34:43: warning: implicit declaration of function 'getppid' is invalid in C99 [-Wimplicit-function-declaration]
+        snprintf (buffer_child, 30, "%d", getppid());
+                                          ^
+/usr/include/secure/_stdio.h:57:62: note: expanded from macro 'snprintf'
+  __builtin___snprintf_chk (str, len, 0, __darwin_obsz(str), __VA_ARGS__)
+                                                             ^
+3 warnings and 1 error generated.
